@@ -3,6 +3,9 @@
   "include": ["./src/**/*.ts"],
   "exclude": ["./src/**/*.spec.ts", "./tests/**/*.ts"],
   "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022",
+    "moduleResolution": "bundler",
     "outDir": "dist",
     "declaration": true,
     "sourceMap": true,
