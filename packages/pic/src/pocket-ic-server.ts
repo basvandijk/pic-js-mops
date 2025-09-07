@@ -157,7 +157,7 @@ const POLL_INTERVAL_MS = 20;
 const POLL_TIMEOUT_MS = 30_000;
 
 class NullStream extends Writable {
-  _write(
+  override _write(
     _chunk: any,
     _encoding: BufferEncoding,
     callback: (error?: Error | null) => void,

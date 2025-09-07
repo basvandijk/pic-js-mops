@@ -1,7 +1,7 @@
 {
   "name": "pic-js-mops",
   "description": "An Internet Computer Protocol canister testing library for TypeScript and JavaScript.",
-  "version": "0.14.1",
+  "version": "0.14.3",
   "author": "DFINITY Stiftung",
   "license": "Apache-2.0",
   "repository": "github:dfinity/pic-js",
@@ -20,10 +20,11 @@
     "testing-tools"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "main": "./src/index.ts",
   "scripts": {
     "prepublishOnly": "tsc -p ./tsconfig.json"
   },

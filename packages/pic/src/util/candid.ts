@@ -7,7 +7,7 @@ export function optional<T>(value: T | undefined | null): [] | [T] {
 
 export function decodeCandid<T>(
   types: IDL.Type[],
-  data: ArrayBufferLike,
+  data: Uint8Array,
 ): T | null {
   const returnValues = IDL.decode(types, data);
 
