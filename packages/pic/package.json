@@ -1,5 +1,5 @@
 {
-  "name": "@dfinity/pic",
+  "name": "pic-js-mops",
   "description": "An Internet Computer Protocol canister testing library for TypeScript and JavaScript.",
   "version": "0.13.1",
   "author": "DFINITY Stiftung",
@@ -20,14 +20,10 @@
     "testing-tools"
   ],
   "files": [
-    "dist",
-    "postinstall.mjs"
+    "dist"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "scripts": {
-    "postinstall": "node ./postinstall.mjs"
-  },
   "dependencies": {
     "bip39": "^3.1.0"
   },

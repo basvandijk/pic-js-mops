@@ -11,4 +11,15 @@ export interface StartServerOptions {
    * Whether to pipe the canister logs to the parent process's stderr.
    */
   showCanisterLogs?: boolean;
+
+  /**
+   * The time-to-live of the PocketIC server in seconds [default: 60]
+   */
+  ttl?: number;
+
+
+  /**
+   * Path to the PocketIC binary.
+   */
+  binPath?: string;
 }

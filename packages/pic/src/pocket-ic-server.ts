@@ -1,6 +1,6 @@
 import { ChildProcess, spawn } from 'node:child_process';
 import { resolve } from 'node:path';
-import { chmodSync } from 'node:fs';
+import { chmodSync, rmSync } from 'node:fs';
 import {
   BinNotFoundError,
   BinStartError,
@@ -48,7 +48,7 @@ export class PocketIcServer {
   private readonly url: string;
 
   private constructor(
-    private readonly serverProcess: ChildProcess,
+    readonly serverProcess: ChildProcess,
     portNumber: number,
   ) {
     this.url = `http://127.0.0.1:${portNumber}`;
@@ -63,14 +63,14 @@ export class PocketIcServer {
   public static async start(
     options: StartServerOptions = {},
   ): Promise<PocketIcServer> {
-    const binPath = this.getBinPath();
+    const binPath = options.binPath || this.getBinPath();
     await this.assertBinExists(binPath);
 
     const pid = process.ppid;
     const picFilePrefix = `pocket_ic_${pid}`;
     const portFilePath = tmpFile(`${picFilePrefix}.port`);
 
-    const serverProcess = spawn(binPath, ['--port-file', portFilePath]);
+    const serverProcess = spawn(binPath, ['--pid', pid.toString(), '--ttl', options.ttl ? options.ttl.toString() : '60']);
 
     if (options.showRuntimeLogs) {
       serverProcess.stdout.pipe(process.stdout);
@@ -131,6 +131,10 @@ export class PocketIcServer {
       });
 
       this.serverProcess.kill();
+
+      const picFilePrefix = `pocket_ic_${process.ppid}`;
+      rmSync(tmpFile(`${picFilePrefix}.port`), {force: true});
+      rmSync(tmpFile(`${picFilePrefix}.ready`), {force: true});
     });
   }
 
