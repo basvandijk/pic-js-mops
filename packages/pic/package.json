@@ -28,9 +28,6 @@
     "bip39": "^3.1.0"
   },
   "peerDependencies": {
-    "@dfinity/agent": "^2.3.0",
-    "@dfinity/candid": "^2.3.0",
-    "@dfinity/identity": "^2.3.0",
-    "@dfinity/principal": "^2.3.0"
+    "@icp-sdk/core": "^4.0.0"
   }
 }
