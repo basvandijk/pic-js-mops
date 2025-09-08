@@ -7,8 +7,8 @@ import {
   hexDecode,
   isNil,
   isNotNil,
-} from './util';
-import { TopologyValidationError } from './error';
+} from './util/index.js';
+import { TopologyValidationError } from './error.js';
 
 //#region CreateInstance
 
