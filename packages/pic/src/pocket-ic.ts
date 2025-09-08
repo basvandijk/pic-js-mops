@@ -1,8 +1,8 @@
 import { Principal } from '@icp-sdk/core/principal';
 import { IDL } from '@icp-sdk/core/candid';
-import { optional, readFileAsBytes } from './util';
-import { PocketIcClient } from './pocket-ic-client';
-import { ActorInterface, Actor, createActorClass } from './pocket-ic-actor';
+import { optional, readFileAsBytes } from './util/index.js';
+import { PocketIcClient } from './pocket-ic-client.js';
+import { ActorInterface, Actor, createActorClass } from './pocket-ic-actor.js';
 import {
   CanisterFixture,
   CreateCanisterOptions,
@@ -20,7 +20,7 @@ import {
   UpdateCallOptions,
   PendingHttpsOutcall,
   MockPendingHttpsOutcallOptions,
-} from './pocket-ic-types';
+} from './pocket-ic-types.js';
 import {
   MANAGEMENT_CANISTER_ID,
   decodeCreateCanisterResponse,
@@ -28,11 +28,11 @@ import {
   encodeInstallCodeRequest,
   encodeStartCanisterRequest,
   encodeUpdateCanisterSettingsRequest,
-} from './management-canister';
+} from './management-canister.js';
 import {
   createDeferredActorClass,
   DeferredActor,
-} from './pocket-ic-deferred-actor';
+} from './pocket-ic-deferred-actor.js';
 
 /**
  * This class represents the main PocketIC client.

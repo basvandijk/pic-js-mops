@@ -1,5 +1,5 @@
-import { ServerRequestTimeoutError } from './error';
-import { isNil, poll } from './util';
+import { ServerRequestTimeoutError } from './error.js';
+import { isNil, poll } from './util/index.js';
 
 export interface RequestOptions {
   method: Method;

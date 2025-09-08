@@ -6,7 +6,7 @@ import {
   BinStartError,
   BinStartMacOSArmError,
   BinTimeoutError,
-} from './error';
+} from './error.js';
 import {
   exists,
   readFileAsString,
@@ -14,8 +14,8 @@ import {
   isArm,
   isDarwin,
   poll,
-} from './util';
-import { StartServerOptions } from './pocket-ic-server-types';
+} from './util/index.js';
+import { StartServerOptions } from './pocket-ic-server-types.js';
 import { Writable } from 'node:stream';
 
 /**

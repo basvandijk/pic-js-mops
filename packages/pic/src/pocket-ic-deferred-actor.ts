@@ -1,9 +1,9 @@
 import { IDL } from '@icp-sdk/core/candid';
 import { Principal } from '@icp-sdk/core/principal';
 import { Identity } from '@icp-sdk/core/agent';
-import { PocketIcClient } from './pocket-ic-client';
-import { ActorInterface, ActorMethod } from './pocket-ic-actor';
-import { decodeCandid } from './util';
+import { PocketIcClient } from './pocket-ic-client.js';
+import { ActorInterface, ActorMethod } from './pocket-ic-actor.js';
+import { decodeCandid } from './util/index.js';
 
 export interface DeferredActorMethod<
   Args extends unknown[] = unknown[],

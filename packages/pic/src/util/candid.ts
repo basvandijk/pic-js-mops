@@ -1,5 +1,5 @@
 import { IDL } from '@icp-sdk/core/candid';
-import { isNil } from './is-nil';
+import { isNil } from './is-nil.js';
 
 export function optional<T>(value: T | undefined | null): [] | [T] {
   return isNil(value) ? [] : [value];

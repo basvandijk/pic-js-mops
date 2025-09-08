@@ -1,4 +1,4 @@
-import { Http2Client } from './http2-client';
+import { Http2Client } from './http2-client.js';
 import {
   EncodedAddCyclesRequest,
   EncodedAddCyclesResponse,
@@ -80,8 +80,8 @@ import {
   GetControllersResponse,
   decodeGetControllersResponse,
   encodeGetControllersRequest,
-} from './pocket-ic-client-types';
-import { isNotNil } from './util';
+} from './pocket-ic-client-types.js';
+import { isNotNil } from './util/index.js';
 
 const PROCESSING_TIME_VALUE_MS = 30_000;
 const AWAIT_INGRESS_STATUS_ROUNDS = 100;

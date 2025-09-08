@@ -1,6 +1,6 @@
 import { IDL } from '@icp-sdk/core/candid';
 import { Principal } from '@icp-sdk/core/principal';
-import { decodeCandid, isNil } from './util';
+import { decodeCandid, isNil } from './util/index.js';
 
 export const MANAGEMENT_CANISTER_ID = Principal.fromText('aaaaa-aa');
 
