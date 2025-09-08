@@ -1,5 +1,5 @@
 export * from './candid.js';
-export * from './encoding';
+export * from './encoding.js';
 export * from './fs.js';
 export * from './is-nil.js';
 export * from './os.js';
